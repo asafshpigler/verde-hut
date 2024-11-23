@@ -19,7 +19,6 @@
   /**
    * COLORS
    */
-
   --gold-crayola: hsl(38, 61%, 73%);
   --quick-silver: hsla(0, 0%, 65%, 1);
   --davys-grey: hsla(30, 3%, 34%, 1);
@@ -51,8 +50,10 @@
   /* font-family */
   --fontFamily-forum: 'Forum', cursive;
   --fontFamily-dm_sans: 'DM Sans', sans-serif;
+  --fontFamily-logo: "Times New Roman", Times, serif;;
 
   /* font-size */
+  --fontSize-logo: 2rem;
   --fontSize-display-1: calc(1.3rem + 6.7vw);
   --fontSize-headline-1: calc(2rem + 2.5vw);
   --fontSize-headline-2: calc(1.3rem + 2.4vw);
@@ -688,6 +689,12 @@ body.nav-active { overflow: hidden; }
 
 .navbar .close-btn:is(:hover, :focus-visible) { color: var(--gold-crayola); }
 
+.logo {
+  font-size: var(--fontSize-logo);
+  font-family: var(--fontFamily-logo);
+  letter-spacing: 0.05cap;
+}
+
 .navbar .logo {
   max-width: max-content;
   margin-inline: auto;
@@ -800,6 +807,15 @@ body.nav-active { overflow: hidden; }
   z-index: 1;
 }
 
+.hero .slider-item video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .hero .slider-item.active {
   opacity: 1;
   visibility: visible;
@@ -817,8 +833,23 @@ body.nav-active { overflow: hidden; }
   z-index: -1;
 }
 
+.hero .slider-filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+  background-color: #0000008f;
+}
+
 .hero .slider-item.active .slider-bg {
   animation: smoothScale 7s linear forwards;
+}
+
+.hero .slider-item.active .slider-bg.no-animation {
+  animation: initial;
 }
 
 @keyframes smoothScale {
