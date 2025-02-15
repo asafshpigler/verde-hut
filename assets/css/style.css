@@ -800,7 +800,7 @@ body.nav-active { overflow: hidden; }
   height: 100%;
   display: grid;
   place-content: center;
-  padding-block-start: 100px;
+  /* padding-block-start: 100px; */
   opacity: 0;
   visibility: hidden;
   transition: var(--transition-3);
