@@ -168,3 +168,19 @@ window.addEventListener("mousemove", function (event) {
   }
 
 });
+
+/* MY CODE */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const parallaxItems = document.querySelectorAll('.parallax-item');
+  
+  window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      
+      parallaxItems.forEach(item => {
+          const speed = parseFloat(item.getAttribute('data-speed'));
+          const yPos = -(scrolled * speed);
+          item.style.transform = `translateY(${yPos}px)`;
+      });
+  });
+}); 
