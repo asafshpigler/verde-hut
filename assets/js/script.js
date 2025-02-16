@@ -1,13 +1,5 @@
 'use strict';
 
-
-
-/**
- * PRELOAD
- * 
- * loading will be end after document is loaded
- */
-
 const preloader = document.querySelector("[data-preaload]");
 
 window.addEventListener("load", function () {
@@ -30,31 +22,27 @@ const addEventOnElements = function (elements, eventType, callback) {
 /**
  * HEADER & BACK TOP BTN
  */
-
 const header = document.querySelector("[data-header]");
-const backTopBtn = document.querySelector("[data-back-top-btn]");
 
 let lastScrollPos = 0;
 
-const hideHeader = function () {
-  const isScrollBottom = lastScrollPos < window.scrollY;
-  if (isScrollBottom) {
-    header.classList.add("hide");
-  } else {
-    header.classList.remove("hide");
-  }
+// const hideHeader = function () {
+//   const isScrollBottom = lastScrollPos < window.scrollY;
+//   if (isScrollBottom) {
+//     header.classList.add("hide");
+//   } else {
+//     header.classList.remove("hide");
+//   }
 
-  lastScrollPos = window.scrollY;
-}
+//   lastScrollPos = window.scrollY;
+// }
 
 window.addEventListener("scroll", function () {
-  if (window.scrollY >= 50) {
-    header.classList.add("active");
-    backTopBtn.classList.add("active");
-    hideHeader();
+  if (window.scrollY >= 100) {
+    header.classList.add("light-mode");
+    // hideHeader();
   } else {
-    header.classList.remove("active");
-    backTopBtn.classList.remove("active");
+    header.classList.remove("light-mode");
   }
 });
 
