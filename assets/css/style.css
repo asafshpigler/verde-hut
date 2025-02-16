@@ -1163,15 +1163,10 @@ textarea.input-field {
   margin-block-start: 40px;
 }
 
-
-
-
-
-/*-----------------------------------*\
-  #FOOTER
-\*-----------------------------------*/
-
-.footer-top { margin-block-end: 70px; }
+.footer {
+  position: relative;
+  z-index: 10;
+}
 
 .footer-brand {
   position: relative;
@@ -1256,6 +1251,29 @@ textarea.input-field {
   display: inline;
   color: var(--gold-crayola);
   text-decoration: underline;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  align-items: center;
+}
+
+.social-links a {
+  color: white;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--gold-crayola);
+}
+
+.social-links ion-icon {
+  width: 24px;
+  height: 24px;
 }
 
 /*-----------------------------------*\
@@ -2026,7 +2044,8 @@ body {
 }
 
 .map-container {
-  height: 75%;
+  overflow: hidden;
+  height: 50%;
 }
 
 .map-section h3 {
