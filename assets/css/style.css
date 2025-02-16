@@ -1878,10 +1878,10 @@ textarea.input-field {
 
 .cake-section {
   padding: 55px 0 29px 26px;
-  height: 80vh;
-  background-color: white;
+  height: 100vh;
+  background-color: #f7f5ef;
   color: black;
-  box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.1); */
   position: relative;
 }
 
@@ -1909,13 +1909,6 @@ textarea.input-field {
   transition: transform 0.1s linear;
 }
 
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
 .cake-section h1 {
   /* font-family: "Monomakh", serif; */
   position: absolute;
@@ -1930,29 +1923,39 @@ textarea.input-field {
 
 .cheesecake2 {
   right: 20px;
-  top: 50%;
-  width: 130px;
+  top: -50px;
+  width: 150px;
 }
 
 .passionfruitcake1 {
   right: 20px;
   top: 0;
-  width: 180px;
+  width: 200px;
 }
 
 .passionfruitcake2 {
   left: 20px;
-  width: 100px;
+  bottom: 100px;
+  width: 200px;
 }
 
 .whippedcreamcake {
-  right: 5px;
-  top: 30%;
-  width: 100px;
+  right: 20px;
+  top: 270px;
+  width: 200px;
 }
 
 .chococreamcake {
+  top: 0;
   width: 100px;
+}
+
+.pineapple {
+  position: absolute;
+  bottom: 0px;
+  right: 17px;
+  width: 210px;
+  /* opacity: 0.9; */
 }
 
 /* Responsive adjustments */
@@ -1973,7 +1976,7 @@ body {
 
 .buffet-section {
   padding: 55px 0 29px 26px;
-  height: 80vh;
+  height: 100vh;
   background-color: white;
   color: black;
   box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -2001,4 +2004,27 @@ body {
   width: 300px;
   margin-right: 16px;
   margin-bottom: 16px;
+}
+
+.map-section {
+  padding: 55px 26px 29px 26px;
+  height: 100vh;
+  background-color: white;
+  color: black;
+}
+
+.map-section p {
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-family: 'ubuntu';
+}
+
+.map-section h2 {
+  font-size: 40px;
+  font-family: 'ubuntu';
+  margin-bottom: 30px;
+}
+
+.map-container {
+  height: 80%;
 }

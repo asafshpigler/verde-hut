@@ -116,22 +116,17 @@ window.addEventListener("load", autoSlide);
  * PARALLAX CAKES
  */
 const cakes = document.querySelectorAll('.cake');
-const PARALLAX_SPEED = 0.8; // Adjust this value to change the parallax speed
 
 window.addEventListener('scroll', () => {
   requestAnimationFrame(parallaxEffect);
 });
 
 function parallaxEffect() {
-  console.log('parallaxEffect');
   const scrolled = window.scrollY;
   
-  cakes.forEach((cake, index) => {
-    // Alternate between moving up and down
-    const direction = index % 2 === 0 ? 1 : -1;
-    const offset = scrolled * PARALLAX_SPEED * direction;
-    console.log(cake, index, offset);
-    
+  cakes.forEach((cake) => {
+    const speed = cake.dataset.speed || 0; // Default to 0 if not specified
+    const offset = scrolled * speed;
     cake.style.transform = `translateY(${offset/10}px)`;
   });
-};
+}
