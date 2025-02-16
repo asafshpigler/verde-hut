@@ -981,7 +981,7 @@ body.loaded { overflow: overlay; }
 
 .passionfruitcake2 {
   left: 20px;
-  bottom: 0;
+  bottom: -50px;
   width: 200px;
 }
 
@@ -998,7 +998,7 @@ body.loaded { overflow: overlay; }
 
 .pineapple {
   position: absolute;
-  bottom: -100px;
+  bottom: -150px;
   right: 17px;
   width: 210px;
 }
