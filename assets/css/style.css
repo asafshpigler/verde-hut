@@ -167,7 +167,7 @@ html {
 body {
   background-color: var(--eerie-black-1);
   color: var(--white);
-  font-family: var(--fontFamily-dm_sans);
+  /* font-family: var(--fontFamily-dm_sans); */
   font-size: var(--fontSize-body-4);
   font-weight: var(--weight-regular);
   line-height: var(--lineHeight-5);
@@ -199,7 +199,7 @@ body.loaded { overflow: overlay; }
 .title-3,
 .title-4 {
   color: var(--white);
-  font-family: var(--fontFamily-forum);
+  /* font-family: var(--fontFamily-forum); */
   font-weight: var(--weight-regular);
   line-height: var(--lineHeight-2);
 }
@@ -596,7 +596,7 @@ body.loaded { overflow: overlay; }
   z-index: 4;
   display: flex;
   justify-content: center;
-  padding: 20px 0;
+  padding: 14px 0;
   font-size: var(--fontSize-body-1);
   transition: var(--transition-2);
 }
@@ -613,7 +613,7 @@ body.loaded { overflow: overlay; }
 
 .logo {
   font-size: var(--fontSize-logo);
-  font-family: var(--fontFamily-logo);
+  /* font-family: var(--fontFamily-logo); */
   letter-spacing: 0.05cap;
 }
 
@@ -938,7 +938,7 @@ body.loaded { overflow: overlay; }
 .menu-card .badge {
   background-color: var(--gold-crayola);
   color: var(--eerie-black-1);
-  font-family: var(--fontFamily-forum);
+  /* font-family: var(--fontFamily-forum); */
   max-width: max-content;
   line-height: var(--lineHeight-6);
   text-transform: uppercase;
@@ -996,7 +996,7 @@ body.loaded { overflow: overlay; }
 
 .testi .quote {
   font-size: 7rem;
-  font-family: var(--fontFamily-forum);
+  /* font-family: var(--fontFamily-forum); */
   line-height: 0.7em;
 }
 
@@ -1904,7 +1904,7 @@ textarea.input-field {
 }
 
 .cake-section h1 {
-  font-family: "Monomakh", serif;
+  /* font-family: "Monomakh", serif; */
   position: absolute;
   left: 50%;
   top: 50%;
@@ -1958,4 +1958,8 @@ textarea.input-field {
 
 body {
   font-family: "ubuntu-light", sans-serif;
+}
+
+.container {
+
 }
