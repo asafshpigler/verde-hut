@@ -2026,5 +2026,13 @@ body {
 }
 
 .map-container {
-  height: 80%;
+  height: 75%;
+}
+
+.map-section h3 {
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 24px;
+  padding-right: 10px;
+  margin-bottom: 20px;
 }
