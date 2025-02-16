@@ -170,7 +170,7 @@ body {
   /* font-family: var(--fontFamily-dm_sans); */
   font-size: var(--fontSize-body-4);
   font-weight: var(--weight-regular);
-  line-height: var(--lineHeight-5);
+  /* line-height: var(--lineHeight-5); */
   overflow: hidden;
   height: 300vh;
 }
@@ -279,7 +279,7 @@ body.loaded { overflow: overlay; }
   bottom: 0;
   width: 100%;
   height: 5px;
-  border-block: 1px solid var(--gold-crayola);
+  /* border-block: 1px solid var(--gold-crayola); */
   transform: scaleX(0.2);
   opacity: 0;
   transition: var(--transition-2);
@@ -604,6 +604,7 @@ body.loaded { overflow: overlay; }
 .header.light-mode {
   color: black;
   background: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 0px 0px;
 }
 
 @keyframes menuBtn {
@@ -750,7 +751,7 @@ body.loaded { overflow: overlay; }
 
 .hero .slider-item.active .section-subtitle { animation-delay: 500ms; }
 
-.hero .slider-item.active .hero-title { animation-delay: 1000ms; }
+.hero .slider-item.active .hero-title { animation-delay: 1000ms; font-family: 'ubuntu'; padding: 0 16px; }
 
 .hero .slider-item.active .hero-text { animation-delay: 1.5s; }
 
@@ -1879,6 +1880,7 @@ textarea.input-field {
   height: 100vh;
   position: relative;
   overflow: hidden;
+  background-color: #f7f5ef;
 }
 
 .cake-section .container {
@@ -1960,6 +1962,34 @@ body {
   font-family: "ubuntu-light", sans-serif;
 }
 
-.container {
+.buffet-section {
+  padding: 55px 0 29px 26px;
+  height: 80vh;
+  background-color: white;
+  color: black;
+  box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.1);
+}
 
+.buffet-section p {
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-family: 'ubuntu';
+}
+
+.buffet-section h2 {
+  font-size: 40px;
+  font-family: 'ubuntu';
+  margin-bottom: 30px;
+}
+
+.buffet-menu {
+  display: flex;
+  overflow-y: scroll;
+}
+
+.buffet-section img {
+  height: 300px;
+  width: 300px;
+  margin-right: 16px;
+  margin-bottom: 16px;
 }
