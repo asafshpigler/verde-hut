@@ -37,17 +37,6 @@ let lastScrollPos = 0;
 //   lastScrollPos = window.scrollY;
 // }
 
-window.addEventListener("scroll", function () {
-  if (window.scrollY >= 100) {
-    header.classList.add("light-mode");
-    // hideHeader();
-  } else {
-    header.classList.remove("light-mode");
-  }
-});
-
-
-
 /**
  * HERO SLIDER
  */
@@ -76,7 +65,7 @@ const slideNext = function () {
   updateSliderPos();
 }
 
-heroSliderNextBtn.addEventListener("click", slideNext);
+// heroSliderNextBtn.addEventListener("click", slideNext);
 
 const slidePrev = function () {
   if (currentSlidePos <= 0) {
@@ -88,7 +77,7 @@ const slidePrev = function () {
   updateSliderPos();
 }
 
-heroSliderPrevBtn.addEventListener("click", slidePrev);
+// heroSliderPrevBtn.addEventListener("click", slidePrev);
 
 /**
  * auto slide
@@ -102,15 +91,13 @@ const autoSlide = function () {
   }, 7000);
 }
 
-addEventOnElements([heroSliderNextBtn, heroSliderPrevBtn], "mouseover", function () {
-  clearInterval(autoSlideInterval);
-});
+// addEventOnElements([heroSliderNextBtn, heroSliderPrevBtn], "mouseover", function () {
+//   clearInterval(autoSlideInterval);
+// });
 
-addEventOnElements([heroSliderNextBtn, heroSliderPrevBtn], "mouseout", autoSlide);
+// addEventOnElements([heroSliderNextBtn, heroSliderPrevBtn], "mouseout", autoSlide);
 
 window.addEventListener("load", autoSlide);
-
-
 
 /**
  * PARALLAX CAKES
@@ -123,7 +110,14 @@ window.addEventListener('scroll', () => {
 
 function parallaxEffect() {
   const scrolled = window.scrollY;
-  
+
+  if (scrolled >= 100) {
+    header.classList.add("light-mode");
+    // hideHeader();
+  } else {
+    header.classList.remove("light-mode");
+  }
+
   cakes.forEach((cake) => {
     const speed = cake.dataset.speed || 0; // Default to 0 if not specified
     const offset = scrolled * speed;
