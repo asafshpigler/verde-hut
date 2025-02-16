@@ -113,69 +113,25 @@ window.addEventListener("load", autoSlide);
 
 
 /**
- * PARALLAX EFFECT
- */
-
-const parallaxItems = document.querySelectorAll("[data-parallax-item]");
-
-let x, y;
-
-/**
- * ROTATING CAKES
+ * PARALLAX CAKES
  */
 const cakes = document.querySelectorAll('.cake');
-let RADIUS = window.innerWidth < 768 ? 150 : 350; // Smaller radius for mobile
-let rotationAngle = 0;
-let lastTime = performance.now();
-const ROTATION_SPEED = 10; // Degrees per second - adjust this to change speed
+const PARALLAX_SPEED = 0.8; // Adjust this value to change the parallax speed
 
-// Update radius when window is resized
-window.addEventListener('resize', () => {
-  RADIUS = window.innerWidth < 768 ? 150 : 350;
+window.addEventListener('scroll', () => {
+  requestAnimationFrame(parallaxEffect);
 });
 
-function rotateCakes(currentTime) {
-  // Calculate time elapsed since last frame in seconds
-  const deltaTime = (currentTime - lastTime) / 1000;
-  lastTime = currentTime;
-
-  // Update rotation angle based on time elapsed
-  rotationAngle = (rotationAngle + ROTATION_SPEED * deltaTime) % 360;
-
-  cakes.forEach(cake => {
-    const baseAngle = parseInt(cake.dataset.angle);
-    const currentAngle = (baseAngle + rotationAngle) * (Math.PI / 180); // Convert to radians
+function parallaxEffect() {
+  console.log('parallaxEffect');
+  const scrolled = window.scrollY;
+  
+  cakes.forEach((cake, index) => {
+    // Alternate between moving up and down
+    const direction = index % 2 === 0 ? 1 : -1;
+    const offset = scrolled * PARALLAX_SPEED * direction;
+    console.log(cake, index, offset);
     
-    // Calculate x and y positions on the circle
-    const x = RADIUS * Math.cos(currentAngle);
-    const y = RADIUS * Math.sin(currentAngle);
-    
-    // Apply the transform
-    cake.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+    cake.style.transform = `translateY(${offset/10}px)`;
   });
-
-  requestAnimationFrame(rotateCakes);
-}
-
-requestAnimationFrame(rotateCakes);
-
-// // Modify the existing parallax effect to work with the rotating cakes
-// window.addEventListener("mousemove", function (event) {
-//   x = (event.clientX / window.innerWidth * 10) - 5;
-//   y = (event.clientY / window.innerHeight * 10) - 5;
-
-//   // reverse the number eg. 20 -> -20, -5 -> 5
-//   x = x - (x * 2);
-//   y = y - (y * 2);
-
-//   for (let i = 0, len = parallaxItems.length; i < len; i++) {
-//     const item = parallaxItems[i];
-//     if (item.classList.contains('cake')) {
-//       // Skip cakes as they're handled by the rotation animation
-//       continue;
-//     }
-//     const parallaxX = x * Number(item.dataset.parallaxSpeed);
-//     const parallaxY = y * Number(item.dataset.parallaxSpeed);
-//     item.style.transform = `translate3d(${parallaxX}px, ${parallaxY}px, 0px)`;
-//   }
-// });
+};
